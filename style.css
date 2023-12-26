@@ -216,9 +216,9 @@ section {
 /* BUTTONS */
 
 .btn-container {
-  display: flex;
+  display: block;
   justify-content: center;
-  gap: 1rem;
+  gap: 5rem;
 }
 
 .btn {
