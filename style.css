@@ -206,11 +206,35 @@ section {
   gap: 1rem;
 }
 
+#myDiv {
+    cursor: pointer;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+  }
+
+  #myDiv:hover {
+    color: orange; /* Change the text color on hover */
+    text-decoration: underline; /* Underline the text on hover */
+  }
+  
+.another-container {
+  text-align: center;
+  /*display: flex;
+  justify-content: center;*/
+  /*margin-right: 10px;*/
+  /*gap: 1rem;*/
+}
+
 /* ICONS */
 
 .icon {
   cursor: pointer;
   height: 2rem;
+}
+
+.icon-text {
+    margin-left: 5px; /* Adjust the spacing between the image and text */
+    font-weight: bold;
+    color: #333; /* Set the desired text color */
 }
 
 /* BUTTONS */
@@ -301,6 +325,7 @@ section {
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   text-align: center;
+  align-items: center;
 }
 
 .section-container {
@@ -339,7 +364,7 @@ section {
   flex-wrap: wrap;
   flex-direction: row;
   gap: 2.5rem;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 article {

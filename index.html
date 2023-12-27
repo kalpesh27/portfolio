@@ -15,7 +15,9 @@
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#research">Research & Writing</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#achievements">Achievements</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -31,7 +33,9 @@
         <div class="menu-links">
           <li><a href="#about" onclick="toggleMenu()">About</a></li>
           <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#research" onclick="toggleMenu()">Research & Writing</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#achievements" onclick="toggleMenu()">Achievements</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
       </div>
@@ -117,6 +121,7 @@
         onclick="location.href='#experience'"
       />
     </section>
+
     <section id="experience">
       <p class="section__text__p1">Experience</p>
       <h1 class="title"></h1>
@@ -177,50 +182,83 @@
         src="./assets/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
-        onclick="location.href='#projects'"
+        onclick="location.href='#research'"
       />
     </section>
+  
+    <section id="research">
+        <p class="section__text__p1">Research & Writings</p>
+        <h1 class="title"></h1>
+        <div class="details-container">
+          <h3 class="experience-sub-title">Research</h3>
+          <div class="article-container">
+          <!-- Button 1: Google Scholar Profile -->
+          <a href="https://scholar.google.com/citations?user=RwZNffsAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+              <div id="socials-container">
+                  <img
+                      src="./assets/scholar.png"
+                      alt="My Google Scholar profile"
+                      class="icon"
+                  />
+                  <span class="icon-text">Google Scholar Profile</span>
+              </div>
+          </a>
+
+          <!-- Button 2: Another Button -->
+          <!-- <a href="https://www.researchgate.net/profile/Kalpesh-Barde-2/stats/reads/demographics" target="_blank" rel="noopener noreferrer">
+              <div id="another-container">
+                  <span class="icon-text">ResearchGate Stats</span>
+              </div>
+          </a> -->
+          <a href="https://dzone.com/articles/exploring-apache-airflow-for-batch-processing-scen" target="_blank" rel="noopener noreferrer">
+              <div id="another-container">
+                <img 
+                src="https://dz2cdn4.dzone.com/themes/dz20/images/dz_logo_2021_cropped.png" 
+                alt="DZone"
+                class="icon"/>
+                  <!-- <span class="icon-text">Dzone Article</span> -->
+              </div>
+          </a>
+        </div>
+        </div>
+        <img
+          src="./assets/arrow.png"
+          alt="Arrow icon"
+          class="icon arrow"
+          onclick="location.href='#projects'"
+        />
+    </section>
+
     <section id="projects">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Projects</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container color-container">
-            <div class="article-container">
-              <!-- <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              /> -->
-            </div>
             <h2 class="experience-sub-title project-title">Salesforce Commerce GPT</h2>
             <div class="btn-container">
              <div style="margin-bottom: 10px;">
               <button
-            class="btn btn-color-2 project-btn"
-            onclick="location.href='https://www.kinandcarta.com/en-us/insights/2023/08/genai-in-the-enterprise/'"
-        >
-            Commerce GPT Media
-        </button>
-    </div>
-    <div style="margin-bottom: 10px;">
-        <button
-            class="btn btn-color-2 project-btn"
-            onclick="location.href='https://www.salesforce.com/news/press-releases/2023/06/07/marketing-commerce-gpt-news/#:~:text=Goals%2DBased%20Commerce%20empowers%20businesses,on%20how%20to%20meet%20them'"
-        >
-            About Commerce GPT
-        </button>
-    </div>
-     <div style="margin-bottom: 10px;">
-        <button
-            class="btn btn-color-2 project-btn"
-            onclick="location.href='https://www.salesforceben.com/salesforce-unveils-commerce-gpt-goals-based-commerce-concierge-and-more/#:~:text=Automate%20growth%20and%20conversion%20strategies,average%20order%20value%20(AOV)'"
-        >
-            More about Commerce GPT
-        </button>
-    </div>
-</div>
-
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://www.kinandcarta.com/en-us/insights/2023/08/genai-in-the-enterprise/'">
+                Commerce GPT Media
+              </button>
+              </div>
+              <div style="margin-bottom: 10px;">
+                <button
+                  class="btn btn-color-2 project-btn"
+                  onclick="location.href='https://www.salesforce.com/news/press-releases/2023/06/07/marketing-commerce-gpt-news/#:~:text=Goals%2DBased%20Commerce%20empowers%20businesses,on%20how%20to%20meet%20them'">
+                  About Commerce GPT
+                </button>
+              </div>
+              <div style="margin-bottom: 10px;">
+                <button
+                  class="btn btn-color-2 project-btn"
+                  onclick="location.href='https://www.salesforceben.com/salesforce-unveils-commerce-gpt-goals-based-commerce-concierge-and-more/#:~:text=Automate%20growth%20and%20conversion%20strategies,average%20order%20value%20(AOV)'">
+                  More about Commerce GPT
+                </button>
+              </div>
+          </div>
           </div>
           <div class="details-container color-container">
             <div class="article-container">
@@ -233,81 +271,108 @@
             <h2 class="experience-sub-title project-title">Salesforce Commerce Cloud</h2>
             <div class="btn-container">
               <button
-            class="btn btn-color-2 project-btn"
-            onclick="location.href='https://www.salesforce.com/products/commerce-cloud/resources/what-is-ecommerce/commerce-cloud-is-the-leading-ecommerce-platform/'"
-        >
-            About Commerce Cloud
-        </button>
-        <div style="margin-bottom: 10px;"></div>
-              <button
-            class="btn btn-color-2 project-btn"
-            onclick="location.href='https://www.salesforce.com/blog/economic-impact-b2b-commerce/'"
-        >
-            Impact Of Commerce Cloud
-        </button>
-            </div>
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://www.salesforce.com/products/commerce-cloud/resources/what-is-ecommerce/commerce-cloud-is-the-leading-ecommerce-platform/'">
+                About Commerce Cloud
+            </button>
+            <div style="margin-bottom: 10px;"></div> <!-- Move this line outside the button container -->
+            <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://www.salesforce.com/blog/economic-impact-b2b-commerce/'"
+            >
+                Impact Of Commerce Cloud
+            </button>
+
+          </div>
           </div>
           <div class="details-container color-container">
             <div class="article-container">
-              <!-- <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              /> -->
             </div>
             <h2 class="experience-sub-title project-title">PayPal Network Tokenization</h2>
             <div class="btn-container">
              <div style="margin-bottom: 10px;">
               <button
             class="btn btn-color-2 project-btn"
-            onclick="location.href='https://www.paypal.com/us/brc/article/network-tokenization'"
-        >
+            onclick="location.href='https://www.paypal.com/us/brc/article/network-tokenization'">
             About Network Tokenization
             </button>
           </div>
               <button
-            class="btn btn-color-2 project-btn"
-            onclick="location.href='https://stockmarketnerd.beehiiv.com/p/paypal-deep-dive'"
-        >
-            Media About Network Tokenization
-        </button>
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://stockmarketnerd.beehiiv.com/p/paypal-deep-dive'">
+                Media About Network Tokenization
+              </button>
             </div>
           </div>
           <div class="details-container color-container">
             <div class="article-container">
-              <!-- <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              /> -->
             </div>
             <h2 class="experience-sub-title project-title">Braintree AuthRate Optimization using AI/ML</h2>
             <div class="btn-container">
               <button
-            class="btn btn-color-2 project-btn"
-            onclick="location.href='https://stockmarketnerd.beehiiv.com/p/paypal-deep-dive'"
-        >
-            About Braintree
-        </button>
-        <div style="margin-bottom: 10px;"></div>
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://stockmarketnerd.beehiiv.com/p/paypal-deep-dive'">
+                About Braintree
+              </button>
+          <div style="margin-bottom: 10px;"></div>
               <button
             class="btn btn-color-2 project-btn"
-            onclick="location.href='https://www.pymnts.com/commerce/2018/contextual-commerce-braintree-user-experience-shopping/'"
-        >
+            onclick="location.href='https://www.pymnts.com/commerce/2018/contextual-commerce-braintree-user-experience-shopping/'">
             Braintree Use Case
-        </button>
-            </div>
+              </button>
           </div>
-
+          </div>
         </div>
       </div>
       <img
         src="./assets/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
+        onclick="location.href='#achievements'"
+      />
+    </section>
+
+        <section id="achievements">
+      <p class="section__text__p1">Achievements</p>
+      <h1 class="title"></h1>
+      <div class="details-container">
+            <h3 class="experience-sub-title">Awards</h3>
+            <div class="article-container">
+              <article>
+                  <img width="48" src="./assets/platinum_logo_titan.png" loading="lazy" height="48" alt="Titan Platinum logo" id="ember97" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+                  <div id="myDiv" style="cursor: pointer;" onclick="window.location.href = 'https://thetitanawards.com/winner-info.php?id=2932';">
+                  <h3>Platinum Winner for Information Technology (Financial Services)</h3>
+                </div>
+              </article>
+              <article>
+                <img width="48" src="./assets/gold_winner_logo.png" loading="lazy" height="48" alt="PayPal logo" id="ember959" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+                <div id="myDiv" style="cursor: pointer;" onclick="window.location.href = 'https://thetitanawards.com/winner-info.php?id=2847';">
+                  <h3>Titan Gold Winner for Information Technology (Technical Professional of the Year)</h3>
+                </div>
+              </article>
+              <article>
+                  <img width="48" src="./assets/gold_winner_logo.png" loading="lazy" height="48" alt="Titan Gold Winner" 
+                  id="ember1103" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+                  <div id="myDiv" style="cursor: pointer;" onclick="window.location.href = 'https://thetitanawards.com/winner-info.php?id=2931';">
+                  <h3>Titan Gold Winner for Information (Technology Engineering)</h3>
+                </div>
+              </article>
+              <article>
+                <img width="48" src="./assets/globee_bronze.png" loading="lazy" height="48" alt="Globee Bronze Winner Logo" id="ember99" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+                <div id="myDiv" style="cursor: pointer;" onclick="window.location.href = 'https://globeeawards.com/business-awards/winners/';">
+                  <h3>Professional of the Year (Information Technology)</h3>
+                </div>
+              </article>
+            </div>
+      </div>  
+        <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
         onclick="location.href='#contact'"
       />
     </section>
+
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
