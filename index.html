@@ -1,397 +1,701 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kalpesh Barde (Payment Systems Expert | Fintech Expert)</title>
-    <meta property="og:image" content="https://github.com/kalpesh27/portfolio/blob/main/assets/profile-pic.jpg">
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Kalpesh Barde</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#achievements">Achievements</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Kalpesh Barde</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalpesh Barde — Staff Engineer | AI, Fintech & Payments Expert</title>
+  <meta name="description" content="Kalpesh Barde is a Staff Engineer with 15+ years building AI-native personalization, recommendation systems, and high-scale payments infrastructure at Life360, Salesforce, PayPal, and Braintree." />
+  <meta name="keywords" content="Kalpesh Barde, Staff Engineer, Recommendation Systems, Personalization, Intelligent Commerce, Fintech, Payments, AI ML, Salesforce Commerce Cloud, PayPal, Life360, Network Tokenization, Revenue ML Platform" />
+  <meta name="author" content="Kalpesh Barde" />
+  <link rel="canonical" href="https://kalpeshbarde.com" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kalpeshbarde.com" />
+  <meta property="og:title" content="Kalpesh Barde — Staff Engineer | AI, Fintech & Payments" />
+  <meta property="og:description" content="Staff Engineer with 15+ years building AI-native personalization, recommendation systems, and high-scale payments infrastructure at Life360, Salesforce, PayPal, and Braintree." />
+  <meta property="og:image" content="https://kalpeshbarde.com/assets/profile-pic.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Kalpesh Barde — Staff Engineer | AI, Fintech & Payments" />
+  <meta name="twitter:description" content="Staff Engineer with 15+ years building AI-native personalization, recommendation systems, and high-scale payments infrastructure." />
+  <meta name="twitter:image" content="https://kalpeshbarde.com/assets/profile-pic.jpg" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kalpesh Barde",
+    "url": "https://kalpeshbarde.com",
+    "image": "https://kalpeshbarde.com/assets/profile-pic.jpg",
+    "jobTitle": "Staff Software Engineer",
+    "description": "Staff Engineer with 15+ years building AI-native personalization, recommendation systems, and high-scale payments infrastructure at Life360, Salesforce, PayPal, and Braintree.",
+    "sameAs": [
+      "https://www.linkedin.com/in/kalpeshbarde/",
+      "https://github.com/kalpesh27",
+      "https://scholar.google.com/citations?user=RwZNffsAAAAJ&hl=en",
+      "https://hackernoon.com/u/kalpeshbarde"
+    ],
+    "knowsAbout": ["Fintech", "Payment Systems", "AI/ML", "Ecommerce", "Network Tokenization", "Apache Airflow", "Salesforce Commerce Cloud"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #F8F6F1;
+      --surface:  #FFFFFF;
+      --border:   #E2DDD5;
+      --text:     #1A1714;
+      --muted:    #7A7167;
+      --accent:   #2B5CE6;
+      --tag-bg:   #EEF2FF;
+      --tag-text: #3451B2;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 246, 241, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-logo {
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── LAYOUT ── */
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      padding: 5rem 0 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 3px solid var(--border);
+    }
+    .hero-text h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 0.4rem;
+    }
+    .hero-text .subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-weight: 400;
+      margin-bottom: 1.4rem;
+      max-width: 480px;
+    }
+    .hero-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .hero-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .btn-primary {
+      background: var(--text);
+      color: var(--bg);
+    }
+    .btn-primary:hover { background: #333; }
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: transparent;
+    }
+    .btn-outline:hover { border-color: var(--text); background: var(--surface); }
+
+    /* ── SECTION ── */
+    section { padding: 4rem 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.8rem;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+    }
+    .about-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem 1.4rem;
+    }
+    .about-card .card-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+    .about-card p {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .about-bio {
+      font-size: 0.95rem;
+      color: #3D3830;
+      line-height: 1.8;
+    }
+
+    /* ── EXPERIENCE (companies) ── */
+    .companies-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .company-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.4rem 1rem 0.4rem 0.6rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .company-chip:hover {
+      border-color: var(--text);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .company-chip img {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    /* ── ROLE CARDS ── */
+    .role-list { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
+    .role-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 10px;
+      padding: 1.2rem 1.5rem;
+    }
+    .role-header { margin-bottom: 0.75rem; }
+    .role-company { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+    .role-title { font-size: 0.78rem; color: var(--muted); margin-top: 0.1rem; }
+    .role-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .role-bullets li {
+      font-size: 0.83rem; color: #3D3830; line-height: 1.65;
+      padding-left: 1.2rem; position: relative;
+    }
+    .role-bullets li::before {
+      content: '—'; position: absolute; left: 0; color: var(--accent);
+      font-size: 0.75rem; top: 0.1rem;
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: box-shadow 0.15s, border-color 0.15s;
+    }
+    .project-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border-color: #ccc8be;
+    }
+    .project-tag {
+      display: inline-block;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      width: fit-content;
+    }
+    .project-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    .project-card p {
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+    .project-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    .project-links a:hover { border-bottom-color: var(--accent); }
+    .link-sep { color: var(--border); font-size: 0.78rem; }
+
+    /* ── ACHIEVEMENTS ── */
+    .award-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .award-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .award-item:hover {
+      border-color: #ccc8be;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .award-medal {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .award-item span {
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* ── RESEARCH ── */
+    .research-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .research-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: border-color 0.15s;
+    }
+    .research-link:hover { border-color: #ccc8be; }
+    .research-link img { width: 28px; height: 28px; object-fit: contain; flex-shrink: 0; }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.4rem;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: border-color 0.15s;
+    }
+    .contact-item:hover { border-color: #ccc8be; }
+    .contact-item img { width: 20px; height: 20px; object-fit: contain; }
+
+    /* ── FOOTER ── */
+    footer {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+    }
+    footer p { font-size: 0.78rem; color: var(--muted); }
+    footer nav ul { display: flex; gap: 1.5rem; list-style: none; }
+    footer nav a { font-size: 0.78rem; color: var(--muted); text-decoration: none; }
+    footer nav a:hover { color: var(--text); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .hero { flex-direction: column; gap: 1.5rem; padding: 3rem 0 2.5rem; }
+      .hero-text h1 { font-size: 1.9rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="#top">Kalpesh Barde</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page" id="top">
+
+    <!-- HERO -->
+    <div class="hero">
+      <img class="hero-photo" src="./assets/profile-pic.jpg" alt="Kalpesh Barde" />
+      <div class="hero-text">
+        <h1>Kalpesh Barde</h1>
+        <p class="subtitle">Distinguished Expert Leading AI-Driven Commerce and Fintech Solutions</p>
+        <div class="hero-links">
+          <a class="btn-primary" href="#contact">Contact</a>
+          <a class="btn-outline" href="https://www.linkedin.com/in/kalpeshbarde/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn-outline" href="https://github.com/kalpesh27" target="_blank" rel="noopener">GitHub</a>
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#research" onclick="toggleMenu()">Research & Writing</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#achievements" onclick="toggleMenu()">Achievements</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
       </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile-pic.jpg" alt="Kalpesh Barde profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Kalpesh Barde</h1>
-        <p class="section__text__p2">Distinguished Expert Leading AI-Driven Commerce and Fintech Solutions</p>
-        <div class="btn-container">
-        <!--   <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/resume-example.pdf')"
-          >
-            Download CV
-          </button> -->
-          <button class="btn btn-color-1" onclick="location.href='#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/kalpeshbarde/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/kalpesh27'"
-          />
-        </div>
-      </div>
-    </section>
+    </div>
+
+    <!-- ABOUT -->
     <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.jpg"
-            alt="Profile picture"
-            class="about-pic"
-          />
+      <p class="section-label">About</p>
+      <h2 class="section-title">Background</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <p class="card-label">Experience</p>
+          <p>15+ years &mdash; AI-Native Personalization &amp; Recommendations &middot; Intelligent Commerce &middot; Payments at Scale</p>
         </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>15+ years <br />Payment Systems Expert</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>Bachelor of Engineering in Information Technology</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              Lead Member of Technical Staff with 15+ years in Ecommerce & Fintech, specializing in high-scale transaction routing, network tokenization, and AI/ML-driven commerce. At Salesforce Commerce Cloud, built platforms like Goals, Recommendations, and agentic merchandising solutions to power hyper-personalized experiences. Proven track record of delivering enterprise systems processing billions of transactions annually, while mentoring engineers and driving cross-functional innovation.
-            </p>
-          </div>
+        <div class="about-card">
+          <p class="card-label">Education</p>
+          <p>B.E. in Information Technology</p>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='#experience'"
-      />
+      <p class="about-bio">
+        Staff Engineer with 15+ years delivering systems where scale and intelligence intersect. At Life360, built an end-to-end Revenue ML Platform &mdash; spanning data ingestion, model training, real-time inferencing, and personalized recommendations &mdash; serving 95.8M monthly active users. At Salesforce Commerce Cloud, spearheaded Goals-Based Commerce and Commerce GPT integrations that brought AI-driven recommendations to 5,600+ storefronts on a $1B+ platform. At PayPal/Braintree, engineered network tokenization infrastructure securing billions of payment credentials globally. A consistent track record of turning machine learning and high-scale engineering into measurable business outcomes.
+      </p>
     </section>
 
+    <!-- EXPERIENCE -->
     <section id="experience">
-      <p class="section__text__p1">Experience</p>
-      <h1 class="title"></h1>
-      <div class="details-container">
-            <h3 class="experience-sub-title">Companies I worked for</h3>
-            <div class="article-container">
-              <article>
-                  <div>
-                  <h3>Salesforce</h3>
-                </div>
-              </article>
-              <article>
-                <div>
-                  <h3>PayPal</h3>
-                </div>
-              </article>
-              <article>
-                  <div>
-                  <h3>Braintree</h3>
-                </div>
-              </article>
-              <article>
-                <div>
-                  <h3>Persistent Systems</h3>
-                </div>
-              </article>
-              <article>
-                <div>
-                  <h3>Sarvatra Technologies</h3>
-                </div>
-              </article>
-              <article>
-                <div>
-                  <h3>Illumina</h3>
-                </div>
-              </article>
-              <article>
-                <div>
-                  <h3>Cisco</h3>
-                </div>
-              </article>
-              <article>
-                <div>
-                  <h3>Mastercard</h3>
-                </div>
-              </article>
-            </div>
-      </div>  
-        <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='#projects'"
-      />
-    </section>
-  
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <h2 class="experience-sub-title project-title">Salesforce Commerce GPT</h2>
-            <div class="btn-container">
-             <div style="margin-bottom: 10px;">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://www.kinandcarta.com/en-us/insights/2023/08/genai-in-the-enterprise/'">
-                Commerce GPT Media
-              </button>
-              </div>
-              <div style="margin-bottom: 10px;">
-                <button
-                  class="btn btn-color-2 project-btn"
-                  onclick="location.href='https://www.salesforce.com/news/press-releases/2023/06/07/marketing-commerce-gpt-news/#:~:text=Goals%2DBased%20Commerce%20empowers%20businesses,on%20how%20to%20meet%20them'">
-                  About Commerce GPT
-                </button>
-              </div>
-              <div style="margin-bottom: 10px;">
-                <button
-                  class="btn btn-color-2 project-btn"
-                  onclick="location.href='https://www.salesforceben.com/salesforce-unveils-commerce-gpt-goals-based-commerce-concierge-and-more/#:~:text=Automate%20growth%20and%20conversion%20strategies,average%20order%20value%20(AOV)'">
-                  More about Commerce GPT
-                </button>
-              </div>
-          </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <!-- <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              /> -->
-            </div>
-            <h2 class="experience-sub-title project-title">Salesforce Commerce Cloud</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://www.salesforce.com/products/commerce-cloud/resources/what-is-ecommerce/commerce-cloud-is-the-leading-ecommerce-platform/'">
-                About Commerce Cloud
-            </button>
-            <div style="margin-bottom: 10px;"></div> <!-- Move this line outside the button container -->
-            <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://www.salesforce.com/blog/economic-impact-b2b-commerce/'"
-            >
-                Impact Of Commerce Cloud
-            </button>
+      <p class="section-label">Experience</p>
+      <h2 class="section-title">Companies I Worked For</h2>
+      <div class="companies-grid">
+        <a class="company-chip" href="https://www.life360.com" target="_blank" rel="noopener"><img src="./assets/logos/life360.png" alt="Life360" />Life360</a>
 
-          </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-            </div>
-            <h2 class="experience-sub-title project-title">PayPal Network Tokenization</h2>
-            <div class="btn-container">
-             <div style="margin-bottom: 10px;">
-              <button
-            class="btn btn-color-2 project-btn"
-            onclick="location.href='https://www.paypal.com/us/brc/article/network-tokenization'">
-            About Network Tokenization
-            </button>
-          </div>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://stockmarketnerd.beehiiv.com/p/paypal-deep-dive'">
-                Media About Network Tokenization
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-            </div>
-            <h2 class="experience-sub-title project-title">Braintree AuthRate Optimization using AI/ML</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://stockmarketnerd.beehiiv.com/p/paypal-deep-dive'">
-                About Braintree
-              </button>
-          <div style="margin-bottom: 10px;"></div>
-              <button
-            class="btn btn-color-2 project-btn"
-            onclick="location.href='https://www.pymnts.com/commerce/2018/contextual-commerce-braintree-user-experience-shopping/'">
-            Braintree Use Case
-              </button>
-          </div>
-          </div>
-        </div>
+        <a class="company-chip" href="https://www.salesforce.com" target="_blank" rel="noopener"><img src="./assets/logos/salesforce.png" alt="Salesforce" />Salesforce</a>
+        <a class="company-chip" href="https://www.paypal.com" target="_blank" rel="noopener"><img src="./assets/logos/paypal.png" alt="PayPal" />PayPal</a>
+        <a class="company-chip" href="https://www.braintreepayments.com" target="_blank" rel="noopener"><img src="./assets/logos/braintree.png" alt="Braintree" />Braintree</a>
+        <a class="company-chip" href="https://www.illumina.com" target="_blank" rel="noopener"><img src="./assets/logos/illumina.png" alt="Illumina" />Illumina</a>
+        <a class="company-chip" href="https://www.cisco.com" target="_blank" rel="noopener"><img src="./assets/logos/cisco.png" alt="Cisco" />Cisco</a>
+        <a class="company-chip" href="https://www.persistent.com" target="_blank" rel="noopener"><img src="./assets/logos/persistent.png" alt="Persistent Systems" />Persistent Systems</a>
+        <a class="company-chip" href="https://www.sarvatra.in" target="_blank" rel="noopener"><img src="./assets/logos/sarvatra.png" alt="Sarvatra Technologies" />Sarvatra Technologies</a>
+        <a class="company-chip" href="https://www.mastercard.com" target="_blank" rel="noopener"><img src="./assets/logos/mastercard.png" alt="Mastercard" />Mastercard</a>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='#achievements'"
-      />
-    </section>
 
-    <section id="achievements">
-      <p class="section__text__p1">Achievements</p>
-      <h1 class="title"></h1>
-      <div class="details-container">
-            <h3 class="experience-sub-title">Awards</h3>
-            <div class="article-container">
-              <article>
-                  <img width="48" src="./assets/platinum_logo_titan.png" loading="lazy" height="48" alt="Titan Platinum logo" id="ember97" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
-                  <div id="myDiv" style="cursor: pointer;" onclick="window.location.href = 'https://thetitanawards.com/winner-info.php?id=2932';">
-                  <h3>Platinum Winner for Information Technology (Financial Services)</h3>
-                </div>
-              </article>
-              <article>
-                <img width="48" src="./assets/gold_winner_logo.png" loading="lazy" height="48" alt="PayPal logo" id="ember959" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
-                <div id="myDiv" style="cursor: pointer;" onclick="window.location.href = 'https://thetitanawards.com/winner-info.php?id=2847';">
-                  <h3>Titan Gold Winner for Information Technology (Technical Professional of the Year)</h3>
-                </div>
-              </article>
-              <article>
-                  <img width="48" src="./assets/gold_winner_logo.png" loading="lazy" height="48" alt="Titan Gold Winner" 
-                  id="ember1103" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
-                  <div id="myDiv" style="cursor: pointer;" onclick="window.location.href = 'https://thetitanawards.com/winner-info.php?id=2931';">
-                  <h3>Titan Gold Winner for Information (Technology Engineering)</h3>
-                </div>
-              </article>
-              <article>
-                <img width="48" src="./assets/globee_bronze.png" loading="lazy" height="48" alt="Globee Bronze Winner Logo" id="ember99" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
-                <div id="myDiv" style="cursor: pointer;" onclick="window.location.href = 'https://globeeawards.com/business-awards/winners/';">
-                  <h3>Professional of the Year (Information Technology)</h3>
-                </div>
-              </article>
-            </div>
-      </div>  
-        <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='#research'"
-      />
-    </section>
-
-     <section id="research">
-        <p class="section__text__p1">Research & Writings</p>
-        <h1 class="title"></h1>
-        <div class="details-container">
-          <h3 class="experience-sub-title">Research</h3>
-          <div class="article-container">
-          <a href="https://scholar.google.com/citations?user=RwZNffsAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-              <div id="socials-container">
-                  <img
-                      src="./assets/scholar.png"
-                      alt="My Google Scholar profile"
-                      class="icon"
-                  />
-                  <span class="icon-text">Google Scholar Profile</span>
-              </div>
-          </a>
-          <a href="https://dzone.com/articles/exploring-apache-airflow-for-batch-processing-scen" target="_blank" rel="noopener noreferrer">
-              <div id="another-container">
-                <img 
-                src="https://dz2cdn4.dzone.com/themes/dz20/images/dz_logo_2021_cropped.png" 
-                alt="DZone"
-                class="icon"/>
-              </div>
-          </a>
-        </div>
-        </div>
-        <img
-          src="./assets/arrow.png"
-          alt="Arrow icon"
-          class="icon arrow"
-          onclick="location.href='#contact'"
-        />
-    </section>
-
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:kbarde27@gmail.com">kbarde27@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/kalpeshbarde/">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+      <div class="role-list">
+        <div class="role-card">
+          <div class="role-header">
+            <p class="role-company">Life360</p>
+            <p class="role-title">Staff Software Engineer</p>
+          </div>
+          <ul class="role-bullets">
+            <li>Contributed to the Revenue ML Platform &mdash; built from the ground up serving 95.8M monthly active users, spanning data ingestion pipelines, model training, inferencing, and real-time SKU recommendations, targeting $10M+ in incremental revenue</li>
+            <li>Drove Life360&rsquo;s company-wide top MAU growth initiative &mdash; developing backend infrastructure and Social Login workflow for Android, unblocking ~50K daily authentication requests across international markets</li>
+            <li>Independently conceptualized and built a Location-Based Ads platform during a hackathon &mdash; geo-fenced retail notifications (Target, Walmart, Lowe&rsquo;s) served to users via the Life360 app &mdash; so well-received it mobilized multiple teams to launch a formal production initiative</li>
           </ul>
         </div>
-      </nav>
-      <p>Copyright &#169; 2023 Kalpesh Barde. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+
+        <div class="role-card">
+          <div class="role-header">
+            <p class="role-company">Salesforce &mdash; Commerce Cloud</p>
+            <p class="role-title">Lead Member of Technical Staff</p>
+          </div>
+          <ul class="role-bullets">
+            <li>Spearheaded the Goals-Based Commerce platform, delivering AI-driven recommendations that improved client profit margins and increased Average Order Value on a $1B+ annual revenue platform</li>
+            <li>Championed generative AI products in Commerce Cloud and drove Marketing GPT integration, creating personalized shopping experiences that elevated conversion, loyalty, and search visibility</li>
+            <li>Introduced new merchandising capabilities into Demandware, now powering 5,600+ storefronts globally</li>
+          </ul>
+        </div>
+
+        <div class="role-card">
+          <div class="role-header">
+            <p class="role-company">PayPal &mdash; Braintree</p>
+            <p class="role-title">Sr. Software Engineer</p>
+          </div>
+          <ul class="role-bullets">
+            <li>Helped engineer payment infrastructure processing 1B+ transactions per quarter, leveraging AI-driven retry routing to meaningfully improve authorization approval rates</li>
+            <li>Led development of a network tokenization platform securing billions of payment credentials globally, now foundational to PayPal&rsquo;s payments security infrastructure</li>
+            <li>Contributed to backend services enabling seamless PayPal-to-Google Wallet integration</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <p class="section-label">Work</p>
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <span class="project-tag">Life360 &middot; AI/ML</span>
+          <h3>Revenue ML Platform</h3>
+          <p>A critical engineering initiative that uses AI to recommend the most relevant subscription to each of Life360&rsquo;s 95.8M monthly active users &mdash; from capturing user behavior and training recommendation models to serving personalized suggestions in real time on mobile, targeting $10M+ in incremental revenue.</p>
+        </div>
+
+        <div class="project-card">
+          <span class="project-tag">Life360 &middot; Growth</span>
+          <h3>Social Login (Android)</h3>
+          <p>Backend infrastructure and end-to-end Social Login workflow for Android, solving a critical authentication gap across international markets blocking ~50K daily requests from both new and returning users &mdash; enabling seamless and secure onboarding at scale.</p>
+        </div>
+
+        <div class="project-card">
+          <span class="project-tag">Salesforce &middot; AI</span>
+          <h3>Commerce GPT</h3>
+          <p>Goals-Based Commerce &mdash; an AI-powered merchandising layer enabling businesses to set high-level goals and automatically optimize strategies to meet them, part of Salesforce&rsquo;s 2023 Commerce GPT launch.</p>
+          <div class="project-links">
+            <a href="https://www.kinandcarta.com/en-us/insights/2023/08/genai-in-the-enterprise/" target="_blank" rel="noopener">Media</a>
+            <span class="link-sep">/</span>
+            <a href="https://www.salesforce.com/news/press-releases/2023/06/07/marketing-commerce-gpt-news/" target="_blank" rel="noopener">Press Release</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <span class="project-tag">Salesforce &middot; Platform</span>
+          <h3>Commerce Cloud</h3>
+          <p>Enterprise-grade ecommerce platform powering billions of transactions. Contributed to core platform capabilities including checkout, promotions, and B2B commerce infrastructure.</p>
+          <div class="project-links">
+            <a href="https://www.salesforce.com/products/commerce-cloud/resources/what-is-ecommerce/commerce-cloud-is-the-leading-ecommerce-platform/" target="_blank" rel="noopener">About</a>
+            <span class="link-sep">/</span>
+            <a href="https://www.salesforce.com/blog/economic-impact-b2b-commerce/" target="_blank" rel="noopener">Impact</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <span class="project-tag">PayPal &middot; Payments</span>
+          <h3>Network Tokenization</h3>
+          <p>Built infrastructure to replace sensitive card data with network tokens at scale, improving authorization rates and reducing fraud across PayPal&rsquo;s global payments network.</p>
+          <div class="project-links">
+            <a href="https://www.paypal.com/us/brc/article/network-tokenization" target="_blank" rel="noopener">About</a>
+            <span class="link-sep">/</span>
+            <a href="https://stockmarketnerd.beehiiv.com/p/paypal-deep-dive" target="_blank" rel="noopener">Media</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <span class="project-tag">Braintree &middot; AI/ML</span>
+          <h3>AuthRate Optimization</h3>
+          <p>Applied AI/ML techniques to optimize transaction authorization rates across Braintree&rsquo;s payment gateway, improving approval rates and reducing false declines at scale.</p>
+          <div class="project-links">
+            <a href="https://www.pymnts.com/commerce/2018/contextual-commerce-braintree-user-experience-shopping/" target="_blank" rel="noopener">Use Case</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements">
+      <p class="section-label">Recognition</p>
+      <h2 class="section-title">Awards</h2>
+      <div class="award-list">
+        <a class="award-item" href="https://thetitanawards.com/winner-info.php?id=2932" target="_blank" rel="noopener">
+          <img class="award-medal" src="./assets/platinum_logo_titan.png" alt="Platinum" />
+          <span>Titan Platinum Winner &mdash; Information Technology (Financial Services)</span>
+        </a>
+        <a class="award-item" href="https://thetitanawards.com/winner-info.php?id=2847" target="_blank" rel="noopener">
+          <img class="award-medal" src="./assets/gold_winner_logo.png" alt="Gold" />
+          <span>Titan Gold Winner &mdash; Information Technology (Technical Professional of the Year)</span>
+        </a>
+        <a class="award-item" href="https://thetitanawards.com/winner-info.php?id=2931" target="_blank" rel="noopener">
+          <img class="award-medal" src="./assets/gold_winner_logo.png" alt="Gold" />
+          <span>Titan Gold Winner &mdash; Information Technology Engineering</span>
+        </a>
+        <a class="award-item" href="https://globeeawards.com/business-awards/winners/" target="_blank" rel="noopener">
+          <img class="award-medal" src="./assets/globee_bronze.png" alt="Globee" />
+          <span>Globee &mdash; Professional of the Year (Information Technology)</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research">
+      <p class="section-label">Research &amp; Writing</p>
+      <h2 class="section-title">Publications</h2>
+      <div class="research-links">
+        <a class="research-link" href="https://scholar.google.com/citations?user=RwZNffsAAAAJ&hl=en" target="_blank" rel="noopener">
+          <img src="./assets/scholar.png" alt="Google Scholar" />
+          Google Scholar Profile
+        </a>
+        <a class="research-link" href="https://hackernoon.com/modular-monoliths-the-future-of-efficient-software-architecture-in-fintech-payment-systems" target="_blank" rel="noopener">
+          <img src="./assets/logos/hackernoon.png" alt="HackerNoon" />
+          Modular Monoliths: The Future of Efficient Software Architecture in Fintech &mdash; HackerNoon
+        </a>
+        <a class="research-link" href="https://dzone.com/articles/exploring-apache-airflow-for-batch-processing-scen" target="_blank" rel="noopener">
+          <img src="./assets/logos/dzone.png" alt="DZone" />
+          Exploring Apache Airflow for Batch Processing &mdash; DZone
+        </a>
+        <a class="research-link" href="https://dzone.com/articles/exploring-debugging-in-apache-airflow-strategies" target="_blank" rel="noopener">
+          <img src="./assets/logos/dzone.png" alt="DZone" />
+          Exploring Debugging in Apache Airflow: Strategies &mdash; DZone
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="contact-grid">
+        <a class="contact-item" href="mailto:kbarde27@gmail.com">
+          <img src="./assets/email.png" alt="Email" />
+          kbarde27@gmail.com
+        </a>
+        <a class="contact-item" href="https://www.linkedin.com/in/kalpeshbarde/" target="_blank" rel="noopener">
+          <img src="./assets/linkedin.png" alt="LinkedIn" />
+          linkedin.com/in/kalpeshbarde
+        </a>
+      </div>
+    </section>
+
+  </div><!-- /page -->
+
+  <footer>
+    <p>&copy; 2024 Kalpesh Barde. All Rights Reserved.</p>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+</body>
 </html>
